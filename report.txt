@@ -1,0 +1,217 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 9 files
+Detected 15 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: IRL_SeqGAN\generator.py
+--------------------------------------------------------------------------------
+IRL_SeqGAN\generator.py:38:24: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+IRL_SeqGAN\generator.py:57:20: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+IRL_SeqGAN\generator.py:67:23: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+IRL_SeqGAN\generator.py:93:23: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+--------------------------------------------------------------------------------
+File: IRL_SeqGAN\irl_seqGAN.py
+--------------------------------------------------------------------------------
+IRL_SeqGAN\irl_seqGAN.py:298:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+File: IRL_SeqGAN\irl_seqGAN_old.py
+--------------------------------------------------------------------------------
+IRL_SeqGAN\irl_seqGAN_old.py:259:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+File: IRL_SeqGAN\rewarder.py
+--------------------------------------------------------------------------------
+IRL_SeqGAN\rewarder.py:32:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+IRL_SeqGAN\rewarder.py:33:20: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+IRL_SeqGAN\rewarder.py:92:38: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+IRL_SeqGAN\rewarder.py:125:23: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+--------------------------------------------------------------------------------
+File: IRL_SeqGAN\rollout_ppo.py
+--------------------------------------------------------------------------------
+IRL_SeqGAN\rollout_ppo.py:56:44: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+IRL_SeqGAN\rollout_ppo.py:85:20: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+IRL_SeqGAN\rollout_ppo.py:93:23: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+IRL_SeqGAN\rollout_ppo.py:118:20: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+IRL_SeqGAN\rollout_ppo.py:130:23: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+================================================================================
+Detailed log follows:
+
+================================================================================
+================================================================================
+Input tree: 'IRL_SeqGAN'
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'IRL_SeqGAN\\dataloader.py'
+ outputting to 'IRL_SeqGAN_V2\\dataloader.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'IRL_SeqGAN\\generator.py'
+ outputting to 'IRL_SeqGAN_V2\\generator.py'
+--------------------------------------------------------------------------------
+
+22:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+29:17: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+30:31: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+31:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+32:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+33:28: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+38:24: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+38:24: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+39:31: INFO: Added keywords to args of function 'tf.transpose'
+55:23: INFO: Renamed 'tf.log' to 'tf.math.log'
+56:44: INFO: Added keywords to args of function 'tf.multinomial'
+56:44: INFO: Renamed 'tf.multinomial' to 'tf.random.categorical'
+57:20: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+57:20: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+58:35: INFO: Added keywords to args of function 'tf.reduce_sum'
+67:23: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+67:23: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+70:21: INFO: Added keywords to args of function 'tf.transpose'
+93:23: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+93:23: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+97:29: INFO: Added keywords to args of function 'tf.transpose'
+102:43: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+102:108: INFO: Renamed 'tf.log' to 'tf.math.log'
+105:24: INFO: Added keywords to args of function 'tf.reduce_sum'
+105:49: INFO: Added keywords to args of function 'tf.reduce_sum'
+107:30: INFO: Added keywords to args of function 'tf.reduce_sum'
+112:55: INFO: Added keywords to args of function 'tf.gradients'
+118:19: INFO: Added keywords to args of function 'tf.reduce_sum'
+131:24: INFO: Added keywords to args of function 'tf.reduce_mean'
+135:48: INFO: Added keywords to args of function 'tf.gradients'
+153:15: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+235:42: INFO: Renamed 'tf.nn.xw_plus_b' to 'tf.compat.v1.nn.xw_plus_b'
+236:21: INFO: Renamed 'tf.nn.xw_plus_b' to 'tf.compat.v1.nn.xw_plus_b'
+243:15: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'IRL_SeqGAN\\irl_seqGAN.py'
+ outputting to 'IRL_SeqGAN_V2\\irl_seqGAN.py'
+--------------------------------------------------------------------------------
+
+258:13: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+260:11: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+261:13: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+262:12: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+262:27: INFO: Renamed 'tf.global_variables' to 'tf.compat.v1.global_variables'
+298:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'IRL_SeqGAN\\irl_seqGAN_old.py'
+ outputting to 'IRL_SeqGAN_V2\\irl_seqGAN_old.py'
+--------------------------------------------------------------------------------
+
+219:13: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+221:11: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+222:13: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+223:12: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+223:27: INFO: Renamed 'tf.global_variables' to 'tf.compat.v1.global_variables'
+259:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'IRL_SeqGAN\\postprocess_data_generator.py'
+ outputting to 'IRL_SeqGAN_V2\\postprocess_data_generator.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'IRL_SeqGAN\\preprocess_dataloader.py'
+ outputting to 'IRL_SeqGAN_V2\\preprocess_dataloader.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'IRL_SeqGAN\\rewarder.py'
+ outputting to 'IRL_SeqGAN_V2\\rewarder.py'
+--------------------------------------------------------------------------------
+
+31:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+32:17: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+32:17: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+33:20: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+33:20: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+35:29: INFO: Added keywords to args of function 'tf.transpose'
+44:9: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+73:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+80:17: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+81:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+82:27: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+83:29: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+84:33: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+85:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+92:24: INFO: Changing keep_prob arg of tf.nn.dropout to rate, and recomputing value.
+
+92:38: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+92:38: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+93:31: INFO: Added keywords to args of function 'tf.transpose'
+125:23: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+125:23: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+128:29: INFO: Added keywords to args of function 'tf.transpose'
+131:41: INFO: Changed tf.to_int32 call to tf.cast(..., dtype=tf.int32).
+133:46: INFO: Added keywords to args of function 'tf.reduce_sum'
+134:27: INFO: Added keywords to args of function 'tf.reduce_sum'
+135:28: INFO: Added keywords to args of function 'tf.reduce_sum'
+140:53: INFO: Added keywords to args of function 'tf.gradients'
+159:15: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+244:38: INFO: Renamed 'tf.nn.xw_plus_b' to 'tf.compat.v1.nn.xw_plus_b'
+246:34: INFO: Renamed 'tf.nn.xw_plus_b' to 'tf.compat.v1.nn.xw_plus_b'
+247:37: INFO: Renamed 'tf.nn.xw_plus_b' to 'tf.compat.v1.nn.xw_plus_b'
+250:36: INFO: Renamed 'tf.nn.xw_plus_b' to 'tf.compat.v1.nn.xw_plus_b'
+256:15: INFO: Renamed 'tf.train.GradientDescentOptimizer' to 'tf.compat.v1.train.GradientDescentOptimizer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'IRL_SeqGAN\\rollout_ppo.py'
+ outputting to 'IRL_SeqGAN_V2\\rollout_ppo.py'
+--------------------------------------------------------------------------------
+
+51:17: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+52:25: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+56:31: INFO: Added keywords to args of function 'tf.transpose'
+56:44: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+56:44: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+63:28: INFO: Added keywords to args of function 'tf.transpose'
+83:23: INFO: Renamed 'tf.log' to 'tf.math.log'
+84:44: INFO: Added keywords to args of function 'tf.multinomial'
+84:44: INFO: Renamed 'tf.multinomial' to 'tf.random.categorical'
+85:20: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+85:20: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+93:23: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+93:23: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+101:21: INFO: Added keywords to args of function 'tf.transpose'
+115:23: INFO: Renamed 'tf.log' to 'tf.math.log'
+116:44: INFO: Added keywords to args of function 'tf.multinomial'
+116:44: INFO: Renamed 'tf.multinomial' to 'tf.random.categorical'
+117:31: INFO: Renamed 'tf.log' to 'tf.math.log'
+118:20: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+118:20: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+119:35: INFO: Added keywords to args of function 'tf.reduce_sum'
+130:23: INFO: Added keywords to args of function 'tf.nn.embedding_lookup'
+130:23: WARNING: tf.nn.embedding_lookup requires manual check. `partition_strategy` has been removed from tf.nn.embedding_lookup.  The 'div' strategy will be used by default.
+134:25: INFO: Added keywords to args of function 'tf.transpose'
+136:25: INFO: Added keywords to args of function 'tf.transpose'
+284:42: INFO: Renamed 'tf.nn.xw_plus_b' to 'tf.compat.v1.nn.xw_plus_b'
+285:21: INFO: Renamed 'tf.nn.xw_plus_b' to 'tf.compat.v1.nn.xw_plus_b'
+299:42: INFO: Renamed 'tf.nn.xw_plus_b' to 'tf.compat.v1.nn.xw_plus_b'
+300:21: INFO: Renamed 'tf.nn.xw_plus_b' to 'tf.compat.v1.nn.xw_plus_b'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'IRL_SeqGAN\\similarity_generated_seed.py'
+ outputting to 'IRL_SeqGAN_V2\\similarity_generated_seed.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+

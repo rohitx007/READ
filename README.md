@@ -1,1 +1,1 @@
-# READ
+python irl_seqGAN.py --seed_file save/seed.tsv --one_walk_file save/one_walk_data.tsv --output my_output.tsv
